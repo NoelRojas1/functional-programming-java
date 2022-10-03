@@ -1,8 +1,10 @@
 package imperative;
 
+import common.Book;
+
 import java.util.ArrayList;
 import java.util.List;
-import static imperative.Main.Genre.*;
+import static common.Genre.*;
 
 /**
  * In the imperative approach, which we all are used to,
@@ -49,38 +51,5 @@ public class Main {
             System.out.println(scifiBook);
         }
 
-    }
-
-    /**
-     * Book class
-     */
-    static class Book {
-        private String title;
-        private Genre genre;
-
-        public Book(String title, Genre genre) {
-            this.title = title;
-            this.genre = genre;
-        }
-
-        public Genre getGenre() {
-            return genre;
-        }
-
-        public String getTitle() {
-            return title;
-        }
-
-        @Override
-        public String toString() {
-            return String.format("Title: %s. Genre: %s", title, genre);
-        }
-    }
-
-    /**
-     * Genres
-     */
-    enum Genre {
-        SCIFI, FICTION, HORROR, ROMANCE
     }
 }

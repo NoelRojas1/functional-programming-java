@@ -1,10 +1,10 @@
 package declarative;
 
-import java.util.ArrayList;
+import common.Book;
+
 import java.util.List;
 import java.util.stream.Collectors;
-
-import static declarative.Main.Genre.*;
+import static common.Genre.*;
 
 /**
  * In the declarative approach, we tell the program what we
@@ -39,38 +39,5 @@ public class Main {
                 .filter(book -> SCIFI.equals(book.getGenre()))
                 .collect(Collectors.toList());
         scifi.forEach(book -> System.out.println(book));
-    }
-
-    /**
-     * Book class
-     */
-    static class Book {
-        private String title;
-        private Genre genre;
-
-        public Book(String title, Genre genre) {
-            this.title = title;
-            this.genre = genre;
-        }
-
-        public Genre getGenre() {
-            return genre;
-        }
-
-        public String getTitle() {
-            return title;
-        }
-
-        @Override
-        public String toString() {
-            return String.format("Title: %s. Genre: %s", title, genre);
-        }
-    }
-
-    /**
-     * Genres
-     */
-    enum Genre {
-        SCIFI, FICTION, HORROR, ROMANCE
     }
 }
